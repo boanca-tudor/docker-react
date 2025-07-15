@@ -8,6 +8,13 @@ pipeline {
     }
 
     stages {
+        stage('Docker Debug') {
+            steps {
+                sh 'whoami && groups && docker ps'
+            }
+        }
+
+
         stage('Build Docker Image') {
             steps {
                 script {
